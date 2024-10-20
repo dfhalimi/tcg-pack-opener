@@ -29,3 +29,9 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+### DB Configuration ###
+config/config.properties
+
+### Libraries ###
+/libs
