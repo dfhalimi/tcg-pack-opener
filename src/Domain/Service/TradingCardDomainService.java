@@ -5,10 +5,10 @@ import Infrastructure.Repository.TradingCardRepository;
 
 import java.util.List;
 
-public class TradingCardService {
+public class TradingCardDomainService {
     private final TradingCardRepository tradingCardRepository;
 
-    public TradingCardService(
+    public TradingCardDomainService(
             TradingCardRepository tradingCardRepository
     ) {
         this.tradingCardRepository = tradingCardRepository;
