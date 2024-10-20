@@ -13,7 +13,7 @@ public class TradingCardRepository {
     public TradingCardRepository() {
         ownedCards = new ArrayList<>();
 
-        ownedCards.add(new TradingCard(1, "Stout", TradingCardRarity.COMMON));
+        ownedCards.add(new TradingCard(1, "Stoat", TradingCardRarity.COMMON));
         ownedCards.add(new TradingCard(2, "Squirrel", TradingCardRarity.COMMON));
         ownedCards.add(new TradingCard(2, "Squirrel", TradingCardRarity.RARE));
         ownedCards.add(new TradingCard(3, "Wolf", TradingCardRarity.ULTRA_RARE));
