@@ -13,10 +13,10 @@ public class TradingCardRepository {
     public TradingCardRepository() {
         ownedCards = new ArrayList<>();
 
-        ownedCards.add(new TradingCard(1, "Stoat", TradingCardRarity.COMMON));
-        ownedCards.add(new TradingCard(2, "Squirrel", TradingCardRarity.COMMON));
-        ownedCards.add(new TradingCard(2, "Squirrel", TradingCardRarity.RARE));
-        ownedCards.add(new TradingCard(3, "Wolf", TradingCardRarity.ULTRA_RARE));
+        ownedCards.add(new TradingCard(1, "Reinhardt", TradingCardRarity.COMMON));
+        ownedCards.add(new TradingCard(2, "Roadhog", TradingCardRarity.COMMON));
+        ownedCards.add(new TradingCard(2, "Roadhog", TradingCardRarity.RARE));
+        ownedCards.add(new TradingCard(3, "Tracer", TradingCardRarity.ULTRA_RARE));
     }
 
     public List<TradingCard> getOwnedCards() {
