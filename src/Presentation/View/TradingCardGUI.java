@@ -1,4 +1,4 @@
-package Presentation.Entity;
+package Presentation.View;
 
 import Domain.Entity.TradingCard;
 import Presentation.Service.TradingCardPresentationService;

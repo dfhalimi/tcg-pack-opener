@@ -2,7 +2,7 @@ package Presentation.Service;
 
 import Domain.Entity.TradingCard;
 import Domain.Service.TradingCardDomainService;
-import Presentation.Entity.TradingCardGUI;
+import Presentation.View.TradingCardGUI;
 
 import java.util.List;
 
