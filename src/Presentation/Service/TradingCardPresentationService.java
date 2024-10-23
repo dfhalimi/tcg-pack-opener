@@ -16,6 +16,7 @@ public class TradingCardPresentationService {
     }
 
     public void initUI() {
+        tradingCardDomainService.pullRandomCards(5);
         List<TradingCard> ownedCards = tradingCardDomainService.getAllOwnedCards();
         TradingCardGUI gui = new TradingCardGUI(ownedCards);
         gui.setVisible(true);

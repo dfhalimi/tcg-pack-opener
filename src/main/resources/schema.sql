@@ -1,7 +1,3 @@
-CREATE DATABASE IF NOT EXISTS tcg_pack_opener_dev;
-
-USE tcg_pack_opener_dev;
-
 CREATE TABLE IF NOT EXISTS trading_cards (
    id VARCHAR(36) PRIMARY KEY DEFAULT (UUID()),
    card_number INT NOT NULL,

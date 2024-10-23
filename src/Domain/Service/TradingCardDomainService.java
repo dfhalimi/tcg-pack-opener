@@ -18,6 +18,14 @@ public class TradingCardDomainService {
         return tradingCardRepository.getOwnedCards();
     }
 
+    public void pullRandomCards(int numberOfCards) {
+        List<TradingCard> randomCards = this.tradingCardRepository.getRandomCards(numberOfCards);
+
+        for (TradingCard tradingCard : randomCards) {
+            addCardToCollection(tradingCard);
+        }
+    }
+
     public void addCardToCollection(TradingCard card) {
         tradingCardRepository.addCard(card);
     }
