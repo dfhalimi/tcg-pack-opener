@@ -16,9 +16,13 @@ public class TradingCardPresentationService {
     }
 
     public void initUI() {
-        tradingCardDomainService.pullRandomCards(5);
         List<TradingCard> ownedCards = tradingCardDomainService.getAllOwnedCards();
-        TradingCardGUI gui = new TradingCardGUI(ownedCards);
+        TradingCardGUI gui = new TradingCardGUI(this, ownedCards);
         gui.setVisible(true);
+    }
+
+    public void handleOpenPackButtonClick(TradingCardGUI gui) {
+        List<TradingCard> cardsFromPack = tradingCardDomainService.pullRandomCards(5);
+        gui.updateTable(cardsFromPack);
     }
 }
