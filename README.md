@@ -28,3 +28,8 @@ Every common card can be pulled in the other rarities. Some other cards may only
 It should display the currently owned cards including a sort and search function.
 
 The application should be built in a way so that the possibility of future deck-building, playing against other players etc. exists.
+
+### How To Run (Not an exhaustive list yet)
+
+- `javac -d bin src/**/*.java`
+- `java -cp "libs/*:bin" Application.Main`
