@@ -8,7 +8,7 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.util.List;
 
-public class PackOpenerGUI extends JFrame {
+public class PackOpenerGUI extends GUI {
     private final TradingCardPresentationService tradingCardPresentationService;
     private JTable cardTable;
 
@@ -16,7 +16,6 @@ public class PackOpenerGUI extends JFrame {
             TradingCardPresentationService tradingCardPresentationService
     ) {
         this.tradingCardPresentationService = tradingCardPresentationService;
-        initUI();
     }
 
     public void updateTable(List<TradingCard> newCards) {
@@ -28,7 +27,7 @@ public class PackOpenerGUI extends JFrame {
         }
     }
 
-    private void initUI() {
+    protected void initUI() {
         setTitle("Pack Opener");
         setSize(600, 400);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -46,7 +45,10 @@ public class PackOpenerGUI extends JFrame {
 
         JButton openPackButton = new JButton("Open Pack");
         openPackButton.addActionListener(e -> tradingCardPresentationService.handleOpenPackButtonClick(this));
+        add(openPackButton, BorderLayout.NORTH);
 
-        add(openPackButton, BorderLayout.SOUTH);
+        JButton backButton = new JButton("Back to Main Menu");
+        backButton.addActionListener(e -> tradingCardPresentationService.handleBackToMainMenuButtonClick(this));
+        add(backButton, BorderLayout.SOUTH);
     }
 }

@@ -1,24 +1,27 @@
 package Presentation.View;
 
 import Domain.Entity.TradingCard;
+import Presentation.Service.TradingCardPresentationService;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.util.List;
 
-public class OwnedCardsGUI extends JFrame {
+public class OwnedCardsGUI extends GUI {
+    private final TradingCardPresentationService tradingCardPresentationService;
     private JTable cardTable;
     private List<TradingCard> ownedCards;
 
     public OwnedCardsGUI(
-            List<TradingCard> ownedCards
+            TradingCardPresentationService tradingCardPresentationService,
+            List<TradingCard>              ownedCards
     ) {
+        this.tradingCardPresentationService = tradingCardPresentationService;
         this.ownedCards = ownedCards;
-        initUI();
     }
 
-    private void initUI() {
+    protected void initUI() {
         setTitle("Pack Opener");
         setSize(600, 400);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -37,5 +40,9 @@ public class OwnedCardsGUI extends JFrame {
         JScrollPane scrollPane = new JScrollPane(cardTable);
 
         add(scrollPane, BorderLayout.CENTER);
+
+        JButton backButton = new JButton("Back to Main Menu");
+        backButton.addActionListener(e -> tradingCardPresentationService.handleBackToMainMenuButtonClick(this));
+        add(backButton, BorderLayout.SOUTH);
     }
 }

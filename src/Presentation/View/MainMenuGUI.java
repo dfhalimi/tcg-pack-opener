@@ -5,17 +5,16 @@ import Presentation.Service.TradingCardPresentationService;
 import javax.swing.*;
 import java.awt.*;
 
-public class MainMenuGUI extends JFrame {
+public class MainMenuGUI extends GUI {
     private final TradingCardPresentationService tradingCardPresentationService;
 
     public MainMenuGUI(
             TradingCardPresentationService tradingCardPresentationService
     ) {
         this.tradingCardPresentationService = tradingCardPresentationService;
-        initUI();
     }
 
-    private void initUI() {
+    protected void initUI() {
         setTitle("Main Menu");
         setSize(600, 400);
         setDefaultCloseOperation(EXIT_ON_CLOSE);

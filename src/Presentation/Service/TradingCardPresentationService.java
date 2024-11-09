@@ -2,10 +2,12 @@ package Presentation.Service;
 
 import Domain.Entity.TradingCard;
 import Domain.Service.TradingCardDomainService;
+import Presentation.View.GUI;
 import Presentation.View.MainMenuGUI;
 import Presentation.View.OwnedCardsGUI;
 import Presentation.View.PackOpenerGUI;
 
+import javax.swing.*;
 import java.util.List;
 
 public class TradingCardPresentationService {
@@ -29,7 +31,12 @@ public class TradingCardPresentationService {
 
     public void handleViewOwnedCardsButtonClick(MainMenuGUI gui) {
         List<TradingCard> ownedCards = tradingCardDomainService.getAllOwnedCards();
-        new OwnedCardsGUI(ownedCards).setVisible(true);
+        new OwnedCardsGUI(this, ownedCards).setVisible(true);
+        gui.dispose();
+    }
+
+    public void handleBackToMainMenuButtonClick(GUI gui) {
+        new MainMenuGUI(this).setVisible(true);
         gui.dispose();
     }
 
