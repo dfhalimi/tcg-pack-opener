@@ -16,6 +16,7 @@ public class PackOpenerGUI extends GUI {
             TradingCardPresentationService tradingCardPresentationService
     ) {
         this.tradingCardPresentationService = tradingCardPresentationService;
+        initUI();
     }
 
     public void updateTable(List<TradingCard> newCards) {

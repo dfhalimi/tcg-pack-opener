@@ -12,6 +12,7 @@ public class MainMenuGUI extends GUI {
             TradingCardPresentationService tradingCardPresentationService
     ) {
         this.tradingCardPresentationService = tradingCardPresentationService;
+        initUI();
     }
 
     protected void initUI() {

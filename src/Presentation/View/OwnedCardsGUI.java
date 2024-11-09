@@ -10,8 +10,7 @@ import java.util.List;
 
 public class OwnedCardsGUI extends GUI {
     private final TradingCardPresentationService tradingCardPresentationService;
-    private JTable cardTable;
-    private List<TradingCard> ownedCards;
+    private final List<TradingCard> ownedCards;
 
     public OwnedCardsGUI(
             TradingCardPresentationService tradingCardPresentationService,
@@ -19,10 +18,11 @@ public class OwnedCardsGUI extends GUI {
     ) {
         this.tradingCardPresentationService = tradingCardPresentationService;
         this.ownedCards = ownedCards;
+        initUI();
     }
 
     protected void initUI() {
-        setTitle("Pack Opener");
+        setTitle("Owned Cards");
         setSize(600, 400);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null); // Center the window
@@ -36,7 +36,7 @@ public class OwnedCardsGUI extends GUI {
             tableModel.addRow(new Object[]{card.getCardNumber(), card.getName(), card.getRarity()});
         }
 
-        cardTable = new JTable(tableModel);
+        JTable cardTable = new JTable(tableModel);
         JScrollPane scrollPane = new JScrollPane(cardTable);
 
         add(scrollPane, BorderLayout.CENTER);
